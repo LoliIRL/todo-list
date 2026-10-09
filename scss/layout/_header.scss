@@ -1,0 +1,35 @@
+@use '../utils' as *;
+
+.header {
+  background: var(--color-panel);
+  border-bottom: 1px solid var(--color-border);
+  padding: $space-md;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-md;
+    align-items: center;
+  }
+
+  &__title {
+    flex: 1;
+    margin: 0;
+    color: var(--color-primary);
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-sm;
+    align-items: center;
+  }
+
+  @include respond-to('tablet') {
+    padding: $space-lg $space-md;
+  }
+}

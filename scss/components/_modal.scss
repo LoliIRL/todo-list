@@ -1,0 +1,59 @@
+@use '../utils' as *;
+
+.modal {
+  border: none;
+  border-radius: $radius;
+  padding: 0;
+  background: var(--color-panel);
+  color: var(--color-text);
+  max-width: min(90vw, 480px);
+  width: 100%;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &__body {
+    padding: $space-lg;
+  }
+
+  &__title {
+    margin-bottom: $space-md;
+    color: var(--color-text);
+  }
+
+  &__field {
+    display: block;
+    margin-bottom: $space-md;
+  }
+
+  &__label {
+    display: block;
+    font-size: rem(14px);
+    font-weight: 500;
+    margin-bottom: $space-xs;
+    color: var(--color-text);
+  }
+
+  &__input {
+    width: 100%;
+    padding: $space-sm $space-md;
+    border: 1px solid var(--color-border);
+    border-radius: $radius;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: rem(15px);
+
+    &:focus-visible {
+      @include focus-ring;
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-sm;
+    justify-content: flex-end;
+    margin-top: $space-md;
+  }
+}

@@ -1,0 +1,54 @@
+@use '../utils' as *;
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  padding: $space-md;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: $radius;
+  margin-bottom: $space-sm;
+  transition: background $transition, border-color $transition;
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+
+  &__checkbox {
+    width: rem(20px);
+    height: rem(20px);
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+  }
+
+  &__title {
+    flex: 1;
+    cursor: pointer;
+    user-select: none;
+    word-break: break-word;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-xs;
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    width: rem(18px);
+    height: rem(18px);
+    display: block;
+  }
+
+  // Выполненная задача — зачёркнута (A6: не только цветом)
+  &--done {
+    background: var(--color-bg-alt);
+
+    .task__title {
+      text-decoration: line-through;
+      color: var(--color-muted);
+    }
+  }
+}
