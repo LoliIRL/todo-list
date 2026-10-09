@@ -1,0 +1,63 @@
+@use '../utils' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  padding: $space-sm $space-md;
+  border-radius: $radius;
+  font-weight: 500;
+  font-size: rem(14px);
+  transition: background $transition, transform 0.1s, box-shadow $transition;
+  min-height: rem(40px);
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Модификатор: основная кнопка
+  &--primary {
+    background: var(--color-primary);
+    color: var(--color-primary-text);
+
+    &:hover:not(:disabled) {
+      filter: brightness(1.1);
+    }
+  }
+
+  // Модификатор: иконочная (маленькая, для действий в задаче)
+  &--icon {
+    padding: $space-sm;
+    min-height: rem(36px);
+    min-width: rem(36px);
+    background: transparent;
+    color: var(--color-muted);
+    border-radius: $radius;
+
+    &:hover {
+      background: var(--color-bg-alt);
+      color: var(--color-text);
+    }
+
+    &.button--danger:hover {
+      color: var(--color-danger);
+    }
+  }
+
+  // Модификатор: danger
+  &--danger {
+    &:hover {
+      color: var(--color-danger);
+    }
+  }
+}

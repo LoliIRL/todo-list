@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List — Киселев Максим</title>
+<link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <h1 class="header__title">📝 To-Do List</h1>
+    <div class="header__actions">
+      <button type="button" class="theme-switcher js-theme-toggle" aria-label="Переключить тему">
+        <span aria-hidden="true">🌙</span>
+      </button>
+      <button type="button" class="button button--primary js-add-task">
+        <span aria-hidden="true">➕</span> Добавить
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+  <!-- Поиск -->
+  <section class="main__section">
+    <label for="search" class="visually-hidden">Поиск задач</label>
+    <div class="search">
+      <input
+        type="search"
+        id="search"
+        class="search__input js-search"
+        placeholder="Найти задачу..."
+        autocomplete="off">
+    </div>
+  </section>
+
+  <!-- Активные задачи -->
+  <section class="main__section" aria-labelledby="active-title">
+    <h2 id="active-title" class="main__section-title">Активные</h2>
+    <ul class="tasks js-list-active" data-list="active"></ul>
+    <p class="main__empty js-empty-active" hidden>Активных задач нет</p>
+  </section>
+
+  <!-- Выполненные -->
+  <section class="main__section" aria-labelledby="done-title">
+    <h2 id="done-title" class="main__section-title">Выполненные</h2>
+    <ul class="tasks js-list-done" data-list="done"></ul>
+    <p class="main__empty js-empty-done" hidden>Выполненных задач нет</p>
+  </section>
+
+</main>
+
+<!-- Модальное окно -->
+<dialog class="modal js-dialog" aria-labelledby="dialog-title">
+  <form method="dialog" class="modal__body js-form">
+    <h2 id="dialog-title" class="modal__title">Новая задача</h2>
+
+    <label class="modal__field">
+      <span class="modal__label">Название задачи</span>
+      <input
+        type="text"
+        id="task-title"
+        name="title"
+        class="modal__input js-task-input"
+        required
+        autocomplete="off"
+        maxlength="200">
+    </label>
+
+    <div class="modal__actions">
+      <button type="button" class="button js-cancel">Отмена</button>
+      <button type="submit" class="button button--primary">Сохранить</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>

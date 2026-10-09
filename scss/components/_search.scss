@@ -1,0 +1,26 @@
+@use '../utils' as *;
+
+.search {
+  position: relative;
+  width: 100%;
+
+  &__input {
+    width: 100%;
+    padding: $space-sm $space-md;
+    border: 1px solid var(--color-border);
+    border-radius: $radius;
+    background: var(--color-panel);
+    color: var(--color-text);
+    font-size: rem(14px);
+    min-height: rem(40px);
+
+    &::placeholder {
+      color: var(--color-muted);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+      border-color: var(--color-primary);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@use '../utils' as *;
+
+h1 { font-size: rem(24px); font-weight: 700; }
+h2 { font-size: rem(18px); font-weight: 600; }
+h3 { font-size: rem(16px); font-weight: 600; }
+
+@include respond-to('tablet') {
+  h1 { font-size: rem(28px); }
+  h2 { font-size: rem(20px); }
+}

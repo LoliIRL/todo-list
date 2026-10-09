@@ -1,0 +1,21 @@
+@use '../utils' as *;
+
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(40px);
+  height: rem(40px);
+  border-radius: $radius;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  font-size: rem(18px);
+
+  &:hover {
+    background: var(--color-border);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}

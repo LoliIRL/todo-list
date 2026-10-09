@@ -1,0 +1,34 @@
+@use '../utils' as *;
+
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: $space-lg $space-md;
+
+  &__section {
+    margin-bottom: $space-xl;
+  }
+
+  &__section-title {
+    margin-bottom: $space-md;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+
+    &::before {
+      content: '';
+      width: 4px;
+      height: rem(20px);
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+  }
+
+  &__empty {
+    color: var(--color-muted);
+    text-align: center;
+    padding: $space-xl $space-md;
+    font-style: italic;
+  }
+}
