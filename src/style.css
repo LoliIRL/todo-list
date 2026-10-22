@@ -1,0 +1,16 @@
+:root {
+  --bg: #f8fafc; --bg-alt: #f1f5f9; --panel: #ffffff; --border: #e2e8f0;
+  --text: #0f172a; --muted: #64748b; --primary: #1d4ed8;
+}
+[data-theme="dark"] {
+  --bg: #0f172a; --bg-alt: #1e293b; --panel: #1e293b; --border: #334155;
+  --text: #f8fafc; --muted: #94a3b8; --primary: #3b82f6;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, sans-serif; background: var(--bg); color: var(--text);
+  transition: background 0.3s, color 0.3s; min-height: 100vh;
+}
+button { cursor: pointer; font: inherit; border: none; background: none; color: inherit; }
+input { font: inherit; }
+:focus-visible { outline: 2px solid #f97316; outline-offset: 2px; }
